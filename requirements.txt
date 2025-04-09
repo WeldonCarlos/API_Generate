@@ -4,3 +4,4 @@ flask-swagger-ui
 python-dotenv
 pymysql
 flask-cors
+gunicorn
