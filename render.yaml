@@ -1,17 +1,17 @@
 services:
   - type: web
-    name: gerador-backend
+    name: flask-backend
     env: python
     buildCommand: ""
-    startCommand: python app.py
+    startCommand: gunicorn app:app
     envVars:
       - key: DB_HOST
-        value: seu-host-do-banco
-      - key: DB_PORT
-        value: 3306
+        value: switchyard.proxy.rlwy.net
       - key: DB_DATABASE
-        value: seu-banco
+        value: railway
+      - key: DB_PORT
+        value: 30543
       - key: DB_USER
-        value: seu-usuario
+        value: root
       - key: DB_PASSWORD
-        value: sua-senha
+        value: dUswAfWtBbobuSnQdrdnCFyMxjoUTcAj
