@@ -1,0 +1,6 @@
+Flask
+Flask-SQLAlchemy
+flask-swagger-ui
+python-dotenv
+pymysql
+flask-cors

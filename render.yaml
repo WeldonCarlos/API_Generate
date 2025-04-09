@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: gerador-backend
+    env: python
+    buildCommand: ""
+    startCommand: python app.py
+    envVars:
+      - key: DB_HOST
+        value: seu-host-do-banco
+      - key: DB_PORT
+        value: 3306
+      - key: DB_DATABASE
+        value: seu-banco
+      - key: DB_USER
+        value: seu-usuario
+      - key: DB_PASSWORD
+        value: sua-senha
