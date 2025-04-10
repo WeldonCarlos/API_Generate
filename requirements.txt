@@ -5,3 +5,4 @@ python-dotenv
 pymysql
 flask-cors
 gunicorn
+cryptography
