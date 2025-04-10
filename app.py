@@ -7,8 +7,9 @@ from flask_cors import CORS
 from sqlalchemy import create_engine, MetaData, Table
 from dotenv import load_dotenv
 
+
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
+CORS(app)  # Libera para qualquer origem
 
 @app.route('/gerar', methods=['POST'])
 def gerar_backend():
