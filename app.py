@@ -161,8 +161,37 @@ if __name__ == '__main__':
         f.write("Flask\nFlask-SQLAlchemy\nflask-swagger-ui\npython-dotenv\npymysql\nflask-cors\n")
 
     # README.md
-    with open(f"{project_name}/README.md", "w") as f:
-        f.write(f"# {project_name}\n\nAPI gerada automaticamente para a tabela `{table_name}`")
+        #with open(f"{project_name}/requirements.txt", "w") as f:
+        #f.write(requirements)
+
+    # README.md
+    readme = textwrap.dedent(f"""\
+
+        # {project_name}
+
+        ## Instruções para rodar o projeto
+
+        1. Instale as dependências:
+        ```bash
+        pip install -r requirements.txt
+        ```
+
+        2. Execute a aplicação:
+        ```bash
+        python app.py
+        ```
+
+        3. Acesse a documentação Swagger:
+        [http://localhost:5000/docs](http://localhost:5000/docs)
+
+        ## Descrição
+
+        Este projeto é um CRUD para a tabela `{table_name}` gerado automaticamente. Ele inclui endpoints para criar, ler, atualizar e excluir registros, com interface Swagger.
+    """)
+    with open(f"{project_name}/README.md", "w", encoding="utf-8") as readme_file:
+        readme_file.write(readme)
+
+    print(f"\n✅ Projeto '{project_name}' criado com sucesso!")
 
     # ZIP
     shutil.make_archive(project_name, 'zip', project_name)
